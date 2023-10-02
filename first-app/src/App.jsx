@@ -14,12 +14,49 @@ function App() {
 
 
   // normal change using the variable 
+  const incrementCounter = () => {
+
+    setCounter(counter + 1);
+
+  }
 
 
 
   // best way to change using the function method
+ const decrementCounter = () => {
+
+  setCounter((previousCounter) => {
+      return previousCounter - 1;
+  }) 
+
+ }
 
 
+//   this is for incrementing the value of the oneTime State
+ const incrementCounter2 = () => {
+
+  setOneTimeUpdate((previousCounter) => {
+    return (previousCounter + 23)
+  })
+ }
+
+
+//  the is for incrementing the value of the object State
+const updateValue = () => {
+
+  setObjectUpdate((e) => {
+    return {...e , value : e.value + 1};
+  })
+}
+
+
+//  the is for incrementing the theme of the object State
+const updateTheme = () => {
+  
+  setObjectUpdate((e) => {
+    return {...e , theme : "light"};
+  })
+}
 
 
 
@@ -40,7 +77,7 @@ function App() {
     {/* the one time run function that only runs during component mounting */}
     <div>
 
-        <button onClick={incrementCounter}>Update Check Console</button>
+        <button onClick={incrementCounter2}>Update Check Console</button>
         <h1>{oneTimeUpdate}</h1>
 
     </div>
