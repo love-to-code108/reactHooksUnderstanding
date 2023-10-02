@@ -36,7 +36,10 @@ function App() {
  const incrementCounter2 = () => {
 
   setOneTimeUpdate((previousCounter) => {
+
+    // string concatination happening below;
     return (previousCounter + 23)
+    
   })
  }
 
@@ -52,7 +55,7 @@ const updateValue = () => {
 
 //  the is for incrementing the theme of the object State
 const updateTheme = () => {
-  
+
   setObjectUpdate((e) => {
     return {...e , theme : "light"};
   })
